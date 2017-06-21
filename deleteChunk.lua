@@ -27,7 +27,8 @@ for c in surface.get_chunks() do
 			entity.type == 'car' or 
 			entity.type == 'gate' or
 			entity.type == 'ammo-turret' or
-			entity.type == 'electric-turret'
+			entity.type == 'electric-turret' or
+			entity.type == 'fluid-turret'
 		) then
 			canRemove = false
 			break;
