@@ -1,7 +1,7 @@
 /c 
 local surface = game.player.surface 
 for c in surface.get_chunks() do     
-	lolremove = false
+	canRemove = true
 	for key, entity in pairs(
 		surface.find_entities({{c.x * 32 - 4, c.y * 32 - 4}, {c.x * 32 + 36, c.y * 32 + 36}})) do
 		if(
@@ -31,8 +31,6 @@ for c in surface.get_chunks() do
 		) then
 			canRemove = false
 			break;
-		else
-			canRemove = true
 		end	
 	end   
 	
