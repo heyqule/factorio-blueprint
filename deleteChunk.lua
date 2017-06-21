@@ -3,7 +3,7 @@ local surface = game.player.surface
 for c in surface.get_chunks() do     
 	canRemove = true
 	for key, entity in pairs(
-		surface.find_entities({{c.x * 32 - 4, c.y * 32 - 4}, {c.x * 32 + 36, c.y * 32 + 36}})) do
+		surface.find_entities_filtered({area={{c.x * 32 - 4, c.y * 32 - 4}, {c.x * 32 + 36, c.y * 32 + 36}},force="player"})) do
 		if(
 			entity.type == 'transport-belt' or 
 			entity.type == 'inserter' or 
