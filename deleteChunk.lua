@@ -1,39 +1,12 @@
 /c 
 local surface = game.player.surface 
 for c in surface.get_chunks() do     
-	canRemove = true
-	for key, entity in pairs(
-		surface.find_entities_filtered({area={{c.x * 32 - 4, c.y * 32 - 4}, {c.x * 32 + 36, c.y * 32 + 36}},force="player"})) do
-		if(
-			entity.type == 'transport-belt' or 
-			entity.type == 'inserter' or 
-			entity.type == 'solar-panel' or 
-			entity.type == 'furnace' or
-			entity.type == 'electric-pole' or
-			entity.type == 'mining-drill' or
-			entity.type == 'straight-rail' or
-			entity.type == 'curved-rail' or
-			entity.type == 'pipe' or
-			entity.type == 'assembling-machine' or
-			entity.type == 'player' or
-			entity.type == 'wall' or
-			entity.type == 'locomotive' or
-			entity.type == 'cargo-wagon' or
-			entity.type == 'fluid-wagon' or
-			entity.type == 'underground-belt' or
-			entity.type == 'pipe-to-ground' or
-			entity.type == 'container' or
-			entity.type == 'storage-tank' or
-			entity.type == 'car' or 
-			entity.type == 'gate' or
-			entity.type == 'ammo-turret' or
-			entity.type == 'electric-turret' or
-			entity.type == 'fluid-turret'
-		) then
-			canRemove = false
-			break;
-		end	
-	end   
+	local canRemove = true
+	local count = surface.count_entities_filtered({area={{c.x * 32 - 4, c.y * 32 - 4}, {c.x * 32 + 36, c.y * 32 + 36}},force="player"});
+	game.player.print(count);
+	if(count > 0) then
+		canRemove = false
+	end   	
 	
 	if(canRemove) then
 		surface.delete_chunk({c.x,c.y});
