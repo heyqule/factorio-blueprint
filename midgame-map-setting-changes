@@ -1,0 +1,38 @@
+/c game.player.surface.peaceful_mode=false
+
+/c game.map_settings.enemy_expansion.enabled=true
+/c game.map_settings.pollution.enabled=true
+/c game.map_settings.enemy_evolution.enabled=true
+
+
+
+/c local mgs = game.player.surface.map_gen_settings
+
+mgs.autoplace_controls["enemy-base"].frequency = "normal"
+mgs.autoplace_controls["enemy-base"].size = "very-high"
+mgs.autoplace_controls["enemy-base"].richness = "very-high"
+
+mgs.autoplace_controls["coal"].frequency = "very-low"
+mgs.autoplace_controls["coal"].size = "high"
+mgs.autoplace_controls["coal"].richness = "very-high"
+
+mgs.autoplace_controls["copper-ore"].frequency = "normal"
+mgs.autoplace_controls["copper-ore"].size = "very-high"
+mgs.autoplace_controls["copper-ore"].richness = "very-high"
+
+mgs.autoplace_controls["crude-oil"].frequency = "normal"
+mgs.autoplace_controls["crude-oil"].size = "high"
+mgs.autoplace_controls["crude-oil"].richness = "very-high"
+
+mgs.autoplace_controls["iron-ore"].frequency = "low"
+mgs.autoplace_controls["iron-ore"].size = "very-high"
+mgs.autoplace_controls["iron-ore"].richness = "very-high"
+
+mgs.autoplace_controls["stone"].frequency = "normal"
+mgs.autoplace_controls["stone"].size = "high"
+mgs.autoplace_controls["stone"].richness = "very-high"
+
+game.player.surface.map_gen_settings = mgs
+
+
+/c game.player.force.chart(game.player.surface, {{15000, -200}, {50000, 200}})
