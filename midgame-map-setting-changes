@@ -4,6 +4,23 @@
 /c game.map_settings.pollution.enabled=true
 /c game.map_settings.enemy_evolution.enabled=true
 
+Set minimum expansion to 1 minute (ie. 1 minute * 3600 ingame ticks)
+/c game.map_settings.enemy_expansion.min_expansion_cooldown = 1*3600
+
+Set maximum expansion to 5 minutes (ie. 5 minute * 3600 ingame ticks)
+/c game.map_settings.enemy_expansion.max_expansion_cooldown = 5*3600
+
+You can lower max expansion cooldown to 4 minutes or less, but be careful as lowering it too low might cause some issues with UPS or cause far too many excited aliens to murder your lovely spaghetti... Likewise, you can raise it to higher values so they don't expand as much, say a minimum of 43600 and maximum 123600..
+Biters ignore any player structures and will build right next to defensive walls:
+/c game.map_settings.enemy_expansion.min_player_base_distance = -1
+
+Decrease the distance that bases can spawn next to each other(default 3):
+/c game.map_settings.enemy_expansion.min_base_spacing = 1
+
+Maximum distance between an existing and new base (default 7):
+/c game.map_settings.enemy_expansion.max_expansion_distance = 4
+
+
 
 
 /c local mgs = game.player.surface.map_gen_settings
